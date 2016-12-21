@@ -112,6 +112,7 @@ public class SpUtil {
 		}
 		sp.edit().putInt(key, value).commit();
 	}
+
 	public static void putSet(Context ctx,String key, Set<String> value){
 		// (存储节点文件名称,读写方式)
 		if(sp == null){
@@ -119,6 +120,7 @@ public class SpUtil {
 		}
 		sp.edit().putStringSet(key,value).commit();
 	}
+
 	public static Set<String> getSet(Context ctx,String key, Set<String> defValue){
 		// (存储节点文件名称,读写方式)
 		if(sp == null){
