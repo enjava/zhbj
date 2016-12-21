@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 22
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.tenray.zhbj"
@@ -34,8 +34,8 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
 
-    compile 'com.jakewharton:butterknife:8.0.1'
-    apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile 'com.jakewharton:butterknife:8.2.1'
+    apt 'com.jakewharton:butterknife-compiler:8.2.1'
     //compile 'com.jakewharton:butterknife:8.0.1'
     //apt 'com.jakewharton:butterknife-compiler:8.0.1'
 }

@@ -20,7 +20,7 @@ public class SplashActivity extends Activity {
     @BindView(R.id.imageView2)
     ImageView imageView2;
     @BindView(R.id.activity_splash)
-   RelativeLayout activitySplash;
+    RelativeLayout activitySplash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
