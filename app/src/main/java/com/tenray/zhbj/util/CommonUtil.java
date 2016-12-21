@@ -32,8 +32,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-import static java.lang.System.currentTimeMillis;
-
 public class CommonUtil {
 
     public static void showInfoDialog(Context context, String message) {
@@ -223,7 +221,7 @@ public class CommonUtil {
         int difference_hours;
         int difference_days;
         int difference_months;
-        long curTime = currentTimeMillis();
+        long curTime = System.currentTimeMillis();
         difference_months = (int) (((curTime / 2592000) % 12) - ((created / 2592000) % 12));
         if (difference_months > 0) {
             when.append(difference_months + "月");
