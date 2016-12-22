@@ -61,9 +61,6 @@ public class SplashActivity extends Activity {
             public void onAnimationStart(Animation animation) {
                 Log.i(tag,"动画开始onAnimationStart");
             }
-
-
-
             @Override
             public void onAnimationRepeat(Animation animation) {
                 Log.i(tag,"动画重置onAnimationRepeat");
@@ -71,7 +68,6 @@ public class SplashActivity extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 Log.i(tag,"动画结束onAnimationEnd");
-
                 // 动画结束,跳转页面
                 // 如果是第一次进入, 跳新手引导
                 // 否则跳主页面
