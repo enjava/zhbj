@@ -41,4 +41,7 @@ dependencies {
     compile files('libs/xUtils-2.6.14.jar')
     compile files('libs/SlidingMenu.jar')
     compile files('libs/gson-2.3.1.jar')
+    compile files('libs/slidingmenulibrary.jar')
+    compile files('libs/library.jar')
+    compile project(path: ':SlidingMenuLibrary')
 }
