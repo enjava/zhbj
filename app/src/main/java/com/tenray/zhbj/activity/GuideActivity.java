@@ -52,7 +52,7 @@ public class GuideActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_guide);
         ButterKnife.bind(this);
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 // 当页面滑动过程中的回调
