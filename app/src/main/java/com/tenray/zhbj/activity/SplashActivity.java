@@ -11,11 +11,9 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
 import com.tenray.zhbj.R;
 import com.tenray.zhbj.util.Constants;
 import com.tenray.zhbj.util.SpUtil;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -30,7 +28,7 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-       // activitySplash= (RelativeLayout) findViewById(R.id.activity_splash);
+        //activitySplash= (RelativeLayout) findViewById(R.id.activity_splash);
         ButterKnife.bind(this);
         //旋转动画
         RotateAnimation animRotate=new RotateAnimation(0,360, Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
