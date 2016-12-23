@@ -34,4 +34,17 @@ public class MainActivity extends SlidingFragmentActivity {
         // Fragment fragment =
         // fm.findFragmentByTag(TAG_LEFT_MENU);//根据标记找到对应的fragment
     }
+
+    public LeftMenuFragment getLeftMenuFragment(){
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        LeftMenuFragment mLeftMenuFragment= (LeftMenuFragment) mFragmentManager.findFragmentByTag("left_menu");
+        return mLeftMenuFragment;
+    }
+
+    public ContentFragment getContentFragment() {
+
+        FragmentManager mFragmentManager = getSupportFragmentManager();
+        ContentFragment mContentFragment= (ContentFragment) mFragmentManager.findFragmentByTag("main");
+        return mContentFragment;
+    }
 }
