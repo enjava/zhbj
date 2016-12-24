@@ -44,9 +44,10 @@ public class LeftMenuFragment extends BaseFragment {
     }
 
     public void setMenuData(ArrayList<NewsMenuData> data){
+
         // 更新页面
         mNewsMenuData = data;
-
+        mCurrentPos=0;
         mAdapter = new LeftMenuAdapter();
         lvList.setAdapter(mAdapter);
 
@@ -62,7 +63,7 @@ public class LeftMenuFragment extends BaseFragment {
                  toggle();
 
                 // 侧边栏点击之后, 要修改新闻中心的FrameLayout中的内容
-               // setCurrentDetailPager(position);
+              setCurrentDetailPager(position);
             }
         });
     }
@@ -83,7 +84,7 @@ public class LeftMenuFragment extends BaseFragment {
         // 获取NewsCenterPager
         NewsCenterPager newsCenterPager = fragment.getNewsCenterPager();
         // 修改新闻中心的FrameLayout的布局
-        //newsCenterPager.setCurrentDetailPager(position);
+        newsCenterPager.setCurrentDetailPager(position);
     }
 
     class LeftMenuAdapter extends BaseAdapter{

@@ -104,6 +104,7 @@ public class GuideActivity extends Activity {
         mBtnStart.setVisibility(View.INVISIBLE);
     }
 
+    //region 初始化数据
     private void initData() {
         mImageViewList = new ArrayList<>();
         for (int i = 0; i < mImageIds.length; i++) {
@@ -127,6 +128,7 @@ public class GuideActivity extends Activity {
             mLlContainer.addView(point);
         }
     }
+    //endregion
 
     @OnClick(R.id.btn_start)
     public void onClick() {

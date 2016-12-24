@@ -1,12 +1,9 @@
 package com.tenray.zhbj.base.impl;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -16,11 +13,18 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.tenray.zhbj.activity.MainActivity;
+import com.tenray.zhbj.base.BaseMenuDetailPager;
 import com.tenray.zhbj.base.BasePager;
+import com.tenray.zhbj.base.impl.menu.InteractMenuDetailPager;
+import com.tenray.zhbj.base.impl.menu.NewsMenuDetailPager;
+import com.tenray.zhbj.base.impl.menu.PhotosMenuDetailPager;
+import com.tenray.zhbj.base.impl.menu.TopicMenuDetailPager;
 import com.tenray.zhbj.entity.NewsMenu;
 import com.tenray.zhbj.fragment.LeftMenuFragment;
 import com.tenray.zhbj.global.GlobalConstants;
 import com.tenray.zhbj.util.CacheUtils;
+
+import java.util.ArrayList;
 
 /**
  * 新闻中心
@@ -31,7 +35,7 @@ import com.tenray.zhbj.util.CacheUtils;
 public class NewsCenterPager extends BasePager {
     private final String tag = getClass().getSimpleName();
 
-   // private ArrayList<BaseMenuDetailPager> mMenuDetailPagers;// 菜单详情页集合
+   private ArrayList<BaseMenuDetailPager> mMenuDetailPagers;// 菜单详情页集合
 
     private  NewsMenu mNewsData;
 
@@ -44,13 +48,13 @@ public class NewsCenterPager extends BasePager {
         System.out.println("新闻中心初始化啦...");
 
         // 要给帧布局填充布局对象
-        TextView view = new TextView(mActivity);
-        view.setText("新闻中心");
-        view.setTextColor(Color.RED);
-        view.setTextSize(22);
-        view.setGravity(Gravity.CENTER);
-
-        flContent.addView(view);
+//        TextView view = new TextView(mActivity);
+//        view.setText("新闻中心");
+//        view.setTextColor(Color.RED);
+//        view.setTextSize(22);
+//        view.setGravity(Gravity.CENTER);
+//
+//        flContent.addView(view);
 
         // 修改页面标题
         tvTitle.setText("新闻");
@@ -115,29 +119,29 @@ public class NewsCenterPager extends BasePager {
         fragment.setMenuData(mNewsData.data);
 
         // 初始化4个菜单详情页
-//        mMenuDetailPagers = new ArrayList<BaseMenuDetailPager>();
-//        mMenuDetailPagers.add(new NewsMenuDetailPager(mActivity));
-//        mMenuDetailPagers.add(new TopicMenuDetailPager(mActivity));
-//        mMenuDetailPagers.add(new PhotosMenuDetailPager(mActivity));
-//        mMenuDetailPagers.add(new InteractMenuDetailPager(mActivity));
+        mMenuDetailPagers = new ArrayList<>();
+        mMenuDetailPagers.add(new NewsMenuDetailPager(mActivity));
+        mMenuDetailPagers.add(new TopicMenuDetailPager(mActivity));
+        mMenuDetailPagers.add(new PhotosMenuDetailPager(mActivity));
+        mMenuDetailPagers.add(new InteractMenuDetailPager(mActivity));
 
         // 将新闻菜单详情页设置为默认页面
-        //setCurrentDetailPager(0);
+         setCurrentDetailPager(0);
     }
 
     // 设置菜单详情页
     public void setCurrentDetailPager(int position) {
         // 重新给frameLayout添加内容
-//        BaseMenuDetailPager pager = mMenuDetailPagers.get(position);// 获取当前应该显示的页面
-//        View view = pager.mRootView;// 当前页面的布局
+       BaseMenuDetailPager pager = mMenuDetailPagers.get(position);// 获取当前应该显示的页面
+       View view = pager.mRootView;// 当前页面的布局
 
         // 清除之前旧的布局
         flContent.removeAllViews();
 
-       // flContent.addView(view);// 给帧布局添加布局
+       flContent.addView(view);// 给帧布局添加布局
 
         // 初始化页面数据
-      //  pager.initData();
+        pager.initData();
 
         // 更新标题
         tvTitle.setText(mNewsData.data.get(position).title);
