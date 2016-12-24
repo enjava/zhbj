@@ -17,6 +17,10 @@ import com.tenray.zhbj.base.BaseMenuDetailPager;
  */
 public class NewsMenuDetailPager extends BaseMenuDetailPager {
 
+	/**
+	 * 构造方法
+	 * @param activity
+	 */
 	public NewsMenuDetailPager(Activity activity) {
 		super(activity);
 	}
